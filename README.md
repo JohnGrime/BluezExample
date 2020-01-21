@@ -11,4 +11,6 @@ sudo apt install libgio3.0-cil-dev
 The code can be built using `g++` and `pkg-config`, e.g.:
 
 ```
-g++ -std=c++14 -Wall -Wextra -pedantic -O2 $(pkg-config --cflags gio-2.0) example.cpp DBusBluez.cpp $(pkg-config --libs gio-2.0) -o bluez```
+g++ -std=c++14 -Wall -Wextra -pedantic -O2 $(pkg-config --cflags gio-2.0) example.cpp DBusBluez.cpp $(pkg-config --libs gio-2.0) -o bluez
+```
+
