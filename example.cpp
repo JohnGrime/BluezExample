@@ -61,7 +61,9 @@ int main(int argc, char **argv)
 	const IntervalType timeslice_ms = 10;
 
 	DBusBluez b;
-	DBusBluez::Flag flags = DBusBluez::Flags::None;
+//	DBusBluez::Flag flags = DBusBluez::Flags::None;
+//	DBusBluez::Flag flags = DBusBluez::Flags::PropertyChange;
+	DBusBluez::Flag flags = DBusBluez::Flags::ObjectManager;
 
 	IntervalType timeout_ms = 0, info_ms = 5*1000;
 
@@ -124,7 +126,7 @@ int main(int argc, char **argv)
 		if (info.Test(timeslice_ms,info_ms)) {
 			const std::lock_guard<std::mutex> lock(b.mutex);
 			auto now = DBusBluez::Clock::now();
-			printf("Devices:\n");
+			printf("Devices (%d):\n", (int)b.devices.size());
 			for (const auto &kv : b.devices) {
 				printf("\t%s : %d s\n",
 					kv.first.c_str(),

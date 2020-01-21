@@ -7,7 +7,7 @@
 // Static utility routines for use with DBus
 //
 
-/*
+///*
 static void gvariant_print(const char *prefix, const gchar *key, GVariant *value)
 {
 	const gchar *type = g_variant_get_type_string(value), *uuid;
@@ -74,7 +74,7 @@ static bool check_signature(
 	}
 	return true;
 }
-*/
+//*/
 
 static void cb_firehose(
 	GDBusConnection *,
@@ -215,7 +215,7 @@ static void cb_prop(
 		static_cast<DBusBluez*>(user_data)->Timestamp(object_path);
 	}
 
-	/*
+//	/*
 	{
 	const char *key;
 	while(g_variant_iter_next(properties, "{&sv}", &key, &value)) {
@@ -223,7 +223,7 @@ static void cb_prop(
 	}
 	printf("\n");
 	}
-	*/
+//	*/
 
 	if (properties != nullptr) g_variant_iter_free(properties);
 	if (value != nullptr) g_variant_unref(value);
@@ -346,13 +346,13 @@ void DBusBluez::Go( Flag monitor )
 		return;
 	}
 
-	if (monitor == 0) {
+	if (monitor == Flags::None) {
 		printf("Go(): no monitor flags; defaulting to firehose\n");
 		monitor = Flags::Firehose;
 	}
 
 	// Firehose callback - gets *everything* from Bluez
-	if (monitor & Flags::Firehose)
+	if (monitor == Flags::Firehose)
 	{
 		RegisterCallback(nullptr, nullptr, cb_firehose);
 	}
