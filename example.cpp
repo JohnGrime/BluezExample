@@ -87,7 +87,11 @@ int main(int argc, char **argv)
 	{
 		struct sigaction new_action;
 
-		sigemptyset(&new_action.sa_mask);
+		if (sigemptyset(&new_action.sa_mask) != ) {
+			perror("sigaction: ");
+			exit(-1);
+		}
+		
 		new_action.sa_handler = signal_handler;
 		new_action.sa_flags = 0;
 
