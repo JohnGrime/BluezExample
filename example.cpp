@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 		struct sigaction new_action;
 
 		if (sigemptyset(&new_action.sa_mask) != ) {
-			perror("sigaction: ");
+			perror("sigemptyset: ");
 			exit(-1);
 		}
 		
