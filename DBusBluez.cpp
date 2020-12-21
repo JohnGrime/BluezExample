@@ -1,3 +1,7 @@
+/*
+	Author: John Grime.
+*/
+
 #include <stdio.h>
 #include <unistd.h>
 

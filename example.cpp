@@ -1,4 +1,6 @@
 /*
+	Author: John Grime.
+
 	Based on code from Parthiban Nallathambi:
 
 	https://www.linumiz.com/bluetooth-set-adapter-powered-property-and-watch-signal-using-gdbus/

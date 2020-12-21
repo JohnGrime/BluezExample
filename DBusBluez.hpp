@@ -1,3 +1,7 @@
+/*
+	Author: John Grime.
+*/
+
 #if !defined(DBUSBLUEZ_INCLUDED)
 #define DBUSBLUEZ_INCLUDED
 
